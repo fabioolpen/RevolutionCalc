@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Revolution IV Calc</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+    <link rel="shortcut icon" href="pokeball.png">
+
+    <script>
+        var lang_level='Level';
+        var lang_nature='Nature';
+        var lang_neutralnature='Neutral Nature';
+        var lang_range='Range';
+        var lang_basestats='Base Stats';
+        var lang_stats='Stats';
+        var lang_possibleivs='Possible IVs';
+        var lang_providedivs='Provided stats';
+        var lang_total='Total';
+        var lang_invalidvalue='Invalid Value';
+        var lang_hp='HP';
+        var lang_atk='ATK';
+        var lang_def='DEF';
+        var lang_spc='SPC';
+        var lang_spdef='SP. DEF';
+        var lang_spatk='SP. ATK';
+        var lang_spd='SPD';
+    </script>
+    <style>
+        @font-face {
+            font-family: PokemonHollow;
+            src: url('Pokemonhollow.ttf');
+        }
+
+
+        .poke-titulo{
+            font-family: PokemonHollow;
+            color: #ffffff;
+
+        }
+       
+    </style>
+</head>
+<body class="bg-dark">
+<header class="jumbotron bg-dark align-middle text-center">
+    <h1 class="poke-titulo display-4 pt-2">Calculadora Revolution</h1>
+ 
+</header>
+<div class="container">
+    <div class='main_div'>
+        <script src="pkmn.js"></script>
+        <script src="ivcalc.js"></script>
+        <div style='max-width:620px; text-align: center; margin: auto;'>
+            <form id='aform' onsubmit='return false;'>
+                <table class="table table-bordered text-white align-center mt-5" style='width:620px;'>
+                    <tr><td colspan='3'>
+                       <!--- <b>Pokemon:</b> <select id='pkmn' required> --->
+                        <label class="font-weight-bold"for="pkmn">Pokémon:</label>
+                        <select class="selectpicker form-control" id="pkmn" data-live-search="true">
+                        <option value=''>---
+                    </select>
+                    </td><td colspan='2'><label class="font-weight-bold" for="lvl">Level:</label><br> 
+                        <input class="form-control" type="number" value='1' id='lvl' min='1' max='100' required></td>
+                        <td colspan='2'><label class="font-weight-bold"for="nature">Nature:</label>
+                            <select class="selectpicker form-control" id="nature" data-live-search="false">
+                                <option value=''>---
+                                <option value='1'>Hardy<option value='2'>Lonely<option value='3'>Brave<option value='4'>Adamant<option value='5'>Naughty<option value='6'>Bold<option value='7'>Docile<option value='8'>Relaxed<option value='9'>Impish<option value='10'>Lax<option value='11'>Timid<option value='12'>Hasty<option value='13'>Serious<option value='14'>Jolly<option value='15'>Naive<option value='16'>Modest<option value='17'>Mild<option value='18'>Quiet<option value='19'>Bashful<option value='20'>Rash<option value='21'>Calm<option value='22'>Gentle<option value='23'>Sassy<option value='24'>Careful<option value='25'>Quirky</select>
+                        </td>
+                    </tr>
+                    <tr><th></th><th>HP</th><th>ATK</th><th>DEF</th><th>SP. ATK</th><th>SP. DEF</th><th>SPD</th></tr>
+                    <tr><td class="align-middle"><b>Stats:</b></td><td><input class="form-control" type='number' id='hp' min='1' max='999'></td><td><input type='number' class="form-control" id='atk' min='1' max='999'></td><td><input type='number' class="form-control" id='def' min='1' max='999'></td><td><input type='number' class="form-control" id='spatk' min='1' max='999'></td><td><input type='number' class="form-control" id='spdef' min='1' max='999'></td><td><input type='number' class="form-control" id='spd' min='1' max='999'></td></tr>
+                    <tr><td class="align-middle"><b>EVs:</b></td><td><input type='number' class="form-control" id='hpev' min='0' max='255' placeholder='0'></td><td><input type='number' class="form-control" id='atkev' min='0' max='255' placeholder='0'></td><td><input type='number' class="form-control" id='defev' min='0' max='255' placeholder='0'></td><td><input type='number' class="form-control" id='spatkev' min='0' max='255' placeholder='0'></td><td><input type='number' class="form-control" id='spdefev' min='0' max='255' placeholder='0'></td><td><input type='number' class="form-control" id='spdev' min='0' max='255' placeholder='0'></td></tr>
+                    <tr><td class="align-middle"><b>Candy's:</b></td><td><input type='number' class="form-control" id='hpvitas' min='0' max='25' placeholder='0'></td><td><input type='number' class="form-control" id='atkvitas' min='0' max='25' placeholder='0'></td><td><input type='number' class="form-control" id='defvitas' min='0' max='25' placeholder='0'></td><td><input type='number' class="form-control" id='spavitas' min='0' max='25' placeholder='0'></td><td><input type='number' class="form-control" id='spdefvitas' min='0' max='25' placeholder='0'></td><td><input type='number' class="form-control" id='spdvitas' min='0' max='25' placeholder='0'></td></tr>
+    
+                </table>
+                <input type='submit' class="btn btn-outline-primary" value='Calcular' style='font-weight:bold;padding:4px;margin:8px;margin-bottom:2px;' onclick='calculate(); return false;' onpress='calculate(); return false;'>
+               <div>
+                   <div class="row justify-content-center mt-5" id='results'></div>
+                </div>
+                
+            </form>
+        </div>
+        <script>
+            var i=1, sel=document.getElementById('pkmn'), option, current=loadFromURI();
+            while(i<li) {
+                option=document.createElement("option");
+                option.text=base_list[i]['name'];
+                option.value=i;
+                if(base_list[i]['num']==current) {
+                    option.selected=true;
+                }
+                sel.appendChild(option);
+                ++i;
+            }
+            if(current!==false)
+                calculate();
+        </script>
+    </div>
+<div class="container mt-5">
+   
+</div>
+<footer class="mastfoot text-center">
+
+    <div class="inner">
+        <p class="text-secondary font-weight-bold">©Revolution Team</p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/i18n/defaults-*.min.js"></script>
+
+</body>
+</html>
