@@ -1064,6 +1064,9 @@ base_list[li]=new base_item(40,80,100,30,30,20,'Geodude','74');
 base_list[li]=new base_item(40,80,100,30,30,20,'Geodude (Alolan)','74a');
 ++li;
 
+base_list[li]=new base_item(100,70,70,100,100,100,'Ghost','1000');
+++li;
+
 base_list[li]=new base_item(58,70,45,40,45,42,'Gible','443');
 ++li;
 
@@ -1817,6 +1820,9 @@ base_list[li]=new base_item(106,190,100,154,100,130,'Mewtwo (Mega X)','150a');
 base_list[li]=new base_item(106,150,70,194,120,140,'Mewtwo (Mega Y)','150b');
 ++li;
 
+base_list[li]=new base_item(120,120,112,180,120,90,'Mewtwo (Armor)','150c');
+++li;
+
 base_list[li]=new base_item(45,85,50,55,50,65,'Mienfoo','619');
 ++li;
 
@@ -2013,6 +2019,9 @@ base_list[li]=new base_item(70,60,125,115,70,55,'Omastar','139');
 ++li;
 
 base_list[li]=new base_item(35,45,160,30,45,70,'Onix','95');
+++li;
+
+base_list[li]=new base_item(35,60,160,30,60,70,'Onix de Crystal','95a');
 ++li;
 
 base_list[li]=new base_item(90,60,80,90,110,60,'Oranguru','765');
@@ -2498,6 +2507,9 @@ base_list[li]=new base_item(73,100,60,100,60,65,'Seviper','336');
 base_list[li]=new base_item(45,53,70,40,60,42,'Sewaddle','540');
 ++li;
 
+base_list[li]=new base_item(117,130,112,112,112,80,'Shadow Lugia','249a');
+++li;
+
 base_list[li]=new base_item(70,120,40,95,40,95,'Sharpedo','319');
 ++li;
 
@@ -2736,6 +2748,9 @@ base_list[li]=new base_item(75,85,200,55,65,30,'Steelix','208');
 ++li;
 
 base_list[li]=new base_item(75,125,230,55,95,30,'Steelix (Mega)','208a');
+++li;
+
+base_list[li]=new base_item(75,100,200,65,80,30,'Steelix de Crystal','208b');
 ++li;
 
 base_list[li]=new base_item(52,40,48,40,48,62,'Steenee','762');
