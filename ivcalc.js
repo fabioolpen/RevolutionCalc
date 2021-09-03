@@ -8,26 +8,28 @@ function calculate() {
     if(isNaN(lvl) || lvl<1)
         lvl=0;
     base=base_list[document.getElementById('pkmn').value];
+    var vitasHp, vitasAtk, vitasDef, vitasSpaAtk, vitasSpDef, vitasSpeed;
 
-    var vitasHp= document.getElementById('hpvitas').value;
-    parseInt(vitasHp);
-    var vitasAtk = document.getElementById('atkvitas').value;
-    var vitasDef = document.getElementById('defvitas').value;
-    var vitasSpaAtk = document.getElementById('spavitas').value;
-    var vitasSpDef = document.getElementById('spdefvitas').value;
-    var vitasSpeed = document.getElementById('spdvitas').value;
+    vitasHp = document.getElementById('hpvitas').value;
+    vitasAtk = document.getElementById('atkvitas').value;
+    vitasDef = document.getElementById('defvitas').value;
+    vitasSpaAtk = document.getElementById('spavitas').value;
+    vitasSpDef = document.getElementById('spdefvitas').value;
+    vitasSpeed = document.getElementById('spdvitas').value;
+    
+   
 
-    if(isNaN(vitasHp))
-        document.getElementById('hpvitas').value = 0;
-    if(isNaN(vitasAtk))
+    if (isNaN(parseInt(vitasHp)))
+    vitasHp = 0; 
+    if(isNaN(parseInt(vitasAtk)))
         vitasAtk=0;
-    if(isNaN(vitasDef))
+    if(isNaN(parseInt(vitasDef)))
         vitasDef=0;
-    if(isNaN(vitasSpaAtk))
+    if(isNaN(parseInt(vitasSpaAtk)))
         vitasSpaAtk=0;
-    if(isNaN(vitasSpDef))
+    if(isNaN(parseInt(vitasSpDef)))
         vitasSpDef=0;
-    if(isNaN(vitasSpeed))
+    if(isNaN(parseInt(vitasSpeed)))
         vitasSpeed=0;
 
     chp=document.getElementById('hp').value;
